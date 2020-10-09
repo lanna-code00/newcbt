@@ -1,0 +1,64 @@
+<form [formGroup]="myquest">
+  
+    <div id="firstmodal">
+      <div class="container col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+        <div class="card">
+  <div class="card-body">
+      <div><h2 class="text-center">ADD QUESTIONS</h2></div>
+      <div class="card col-md-12 mx-auto">
+        <input type="hidden" class="form-control mb-4" formControlName="id" name="id">
+          <div class="col-md-12 float-right">    
+      <mat-form-field>
+        <mat-label>Choose Paper type</mat-label>
+        <mat-select  formControlName="papertype" class="mb-2 col-md-12 float-right form-control" name="papertype">
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let qq of setquests" [value]="qq.course_id">
+            {{qq.course}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+  
+          <div class="col-md-12 float-right">
+            Question: <input type="text" class="form-control mb-2" name="question" formControlName="question">
+        </div>
+  
+        <div class="col-md-12 float-right">
+          optionA: <input type="text" class="form-control mb-2" name="optionA" formControlName="optionA">
+      </div> 
+  
+   <div class="col-md-12 float-right">
+        optionB: <input type="text" class="form-control mb-2" name="optionB" formControlName="optionB">
+    </div>
+  
+    <div class="col-md-12 float-right">
+      optionC: <input type="text" class="form-control mb-2" name="optionC" formControlName="optionC">
+  </div>
+  
+  <div class="col-md-12 float-right">
+    optionD: <input type="text" class="form-control mb-2" name="optionD" formControlName="optionD">
+  </div>
+  
+  <div class="col-md-12 float-right">
+    Correct Answer: <input type="text" class="form-control mb-2" name="correctans" formControlName="correctans">
+   </div>
+         
+  <div class="col-md-12 float-right">
+   marks: <input type="text" class="form-control mb-2" name="marks" formControlName="marks">
+  </div>
+  
+           <div class="mb-3">
+             <button class="btn btn-success float-right" type="submit" (click)="update()">ADD</button>
+           </div>
+  
+            </div> 
+      </div>
+  
+      </div>  
+    </div>
+  </div>
+  </div>
+  </div>
+        </form> 

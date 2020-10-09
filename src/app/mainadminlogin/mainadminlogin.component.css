@@ -1,0 +1,32 @@
+.newhead{
+    height: 100%;
+    width: 100%;
+    background-image: url("../../assets/newpics/newme.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.card .card-body .row .input-group .form-controls{
+    min-height: 50px;
+    min-width: 100%;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: 1px solid blue;
+    background-color: transparent;
+    color: cornsilk;
+  }
+  .card .card-body .row .input-group .form-controls:focus{
+    min-height: 50px;
+    min-width: 50%;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    background-color: transparent;
+    outline: none;
+    border-bottom-style: linear-gradient(to right,rgb(51, 1, 85), rgb(10, 212, 212));;
+    transition: 0.9s;
+    font-size: 21px;
+    padding-top: 10px;
+  }

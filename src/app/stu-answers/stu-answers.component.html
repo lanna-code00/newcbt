@@ -1,0 +1,50 @@
+<div>
+<div *ngIf="noquestions" class="row justify-content-center mt-5 animate flip infinite">
+  <span><h1 >NO QUESTIONS AT THE MOMENT</h1></span>
+</div>
+<mat-horizontal-stepper #stepper *ngIf="answers">
+  
+  <mat-step *ngFor="let ans of answers">
+    <input type="text" name="" id="" [(ngModel)]="bindings">
+    
+    
+    
+    <!-- <ng-template matStepLabel></ng-template> -->
+    <h4><strong>{{ans.question}}</strong></h4>
+    <mat-radio-group aria-label="Select an option" class="example-radio-group" name="myopt" [(ngModel)]="myopt" (click)="checkcorrectanswers(ans.quest_id)">
+ 
+        <!-- <form [formGroup]="newans"> -->
+          <mat-radio-button [value]="ans.optionA">{{ans.optionA}}</mat-radio-button>
+          <mat-radio-button [value]="ans.optionB">{{ans.optionB}}</mat-radio-button>
+          <mat-radio-button [value]="ans.optionC">{{ans.optionC}}</mat-radio-button>
+          <mat-radio-button [value]="ans.optionD">{{ans.optionD}}</mat-radio-button>
+          <!-- </form> -->
+        </mat-radio-group>
+     
+          <div>
+            <button mat-button matStepperPrevious (click)="subtractingscore()">Back</button>
+            <button mat-button matStepperNext>Next</button>
+
+          </div>
+
+          
+        </mat-step>
+       
+    
+
+</mat-horizontal-stepper>
+
+<!-- <form [formGroup]="newform" novalidate  >
+        
+  <input hidden type="text" name="scores" formControlName="scores" id="" >
+  <input hidden type="text" name="course_id" formControlName="course_id" id="" >
+  <input hidden type="text" name="student_id" formControlName="student_id" id="" > -->
+<div>
+  <button type="submit" (click)="submitexam()"mat-button class="ml-5 btn-success mt-3">Submit</button>
+
+</div>
+
+<!-- </form> -->
+
+
+

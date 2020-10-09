@@ -1,0 +1,32 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="ml-4 text-white-50">My Dashboard</mat-toolbar>
+    <mat-nav-list class="nav-list">
+      <a mat-list-item [routerLink]="['/mainadminsidenav/maindashboard']"><span class="fa fa-tachometer-alt mr-2"></span>Dashboard</a>
+      <a mat-list-item [routerLink]="['/mainadminsidenav/tutors']"><span class="fa fa-chalkboard-teacher mr-2"></span>My Tutors</a>
+      <a mat-list-item [routerLink]="['/mainadminsidenav/allstudents']"><span class="fa fa-user-graduate mr-2"></span>My Students</a>
+      <a mat-list-item [routerLink]="['/mainadminlogin']"><span class="fa fa-sign-out-alt mr-2"></span>Logout</a>
+      <a mat-list-item ><span class="fa fa-user-edit mr-2"></span>Edit profile</a>
+      <a mat-list-item ><span class="fa fa-users-cog mr-2"></span>Settings</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="light">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon"><i class="fa fa-align-justify"></i></mat-icon>
+      </button>
+      <span class="ml-3">SQI</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

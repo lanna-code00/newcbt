@@ -1,0 +1,6 @@
+{
+    "/newcbt2": {
+        "target": "http://localhost:80",
+        "secure": false
+      }
+}

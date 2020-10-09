@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row mt-5">
+       <table class="table">
+           <tr *ngFor="let studentC of studentscourse">
+               <td>
+                   <div class="card">
+                      <div class="card-header">
+                          <h4 class="text-center">TUTOR: {{studentC.name | uppercase}}</h4>
+                          <h4 class="text-center">COIRSE: {{studentC.course | uppercase}}</h4>
+                          <h4 class="text-center">QUESTIONS: {{studentC.questNo}}</h4>
+                          <h4 class="text-center">DATE AND TIME: {{studentC.date}} {{studentC.time}}</h4>
+
+                         
+                      </div>
+                      <div class="card-body" align="center">
+                       <button class="btn btn-success" (click)="viewQuestions(studentC.course_id)">Click to Start</button>
+                      </div>
+                   </div>
+               </td>
+           </tr>
+       </table>
+    </div>
+</div>

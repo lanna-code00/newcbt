@@ -1,0 +1,74 @@
+<!-- 
+
+    <div class="modal-dialog shadow" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Admin Sign in</h4>
+          
+        </div>
+        <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <i class="fas fa-envelope prefix grey-text"></i>
+            <input type="text" formControlName="identification" name="identification" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Your Identification</label>
+          </div>
+  
+          <div class="md-form mb-4">
+            <i class="fas fa-lock prefix grey-text"></i>
+            <input type="password" formControlName="password" name="password" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+          </div>
+  
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-success shadow" type="submit">Login</button>
+          <button class="btn btn-success shadow" [routerLink]="['/admin']" routerLinkActive="router-link-active" >Sign Up</button>
+  
+        </div>
+      </form>
+      </div>
+    </div> -->
+ 
+  
+   <section>				
+        <div id="container_demo" >
+            <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+                <div id="login" class="animate form">
+                    <form [formGroup]="angForm" (ngSubmit)="postdata()"> 
+                        <h1>Log In</h1> 
+
+                        <div *ngIf="incorrect" class="card-header bg-danger text-center text-white mt-2 mb-3 animated fadeInUp">
+                          <p class="mb-1 mt-1">Username or password is Incorrect</p>
+                       </div>
+
+                        <p> 
+                          <label for="password" class="youpasswd"> Your identification </label>
+                          <input id="password" name="identification" [ngClass]="{ 'is-invalid': submitted && identification.invalid }" formControlName="identification" required="required" type="text" placeholder="eg. SCICT 1" /> 
+                      </p>
+                        <p> 
+                            <label for="password" class="youpasswd"> Your password </label>
+                            <input id="password" name="password" [ngClass]="{ 'is-invalid': submitted && password.invalid }" formControlName="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                        </p>
+                        <p class="keeplogin"> 
+          <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+          <label for="loginkeeping">Keep me logged in</label>
+        </p>
+                        <p class="login button"> 
+                            <input type="submit" value="log in" /> 
+        </p>
+      </form>
+                          <p class="change_link">
+           New here ?
+            <a [routerLink]="['/admin']" routerLinkActive="router-link-active"  class="to_register">Sign up</a>
+          </p>
+                </div>
+</div>
+    </div>
+  </section>
+
+  
+  

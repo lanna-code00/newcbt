@@ -1,0 +1,24 @@
+.newhead{
+    height: 100%;
+    width: 100%;
+    background-image: url("../../assets/newpics/newme.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.card .card-body .row .input-group .form-control{
+    min-height: 50px;
+    border-radius: 40px;
+    background-color: transparent;
+    color: cornsilk;
+  }
+  .card .card-body .row .input-group .form-control:focus{
+    min-height: 50px;
+    border-radius: 40px;
+    background-color: transparent;
+    border-color: linear-gradient(to right,rgb(51, 1, 85), rgb(10, 212, 212));;
+    transition: 0.5s;
+    font-size: 21px;
+
+  }

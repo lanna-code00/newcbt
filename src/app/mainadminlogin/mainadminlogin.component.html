@@ -1,0 +1,56 @@
+<div class="newhead">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+            <div class="card shadow-lg" style="background: transparent; border: none; margin-top: 140px;">
+                <!-- <div class="card-header text-center"> -->
+                   <h1 class="text-white text-center mb-2" style="font-size: 30px;">LOGIN FORM</h1>
+                <!-- </div> -->
+                <div class="card-body mt-3">
+                   
+                  <form [formGroup]="adminlogin" novalidate (ngSubmit)="login()">
+
+                    <div *ngIf="incorrect" class="card-header bg-danger text-center text-white mt-2 mb-3">
+                       <p class="h5 mb-1 mt-1">Username or password is Incorrect</p>
+                    </div>
+                
+                    <div class="row justify-content-center">
+                        <div class="input-group mb-5 col-md-12">
+                            <input type="text" [ngClass]="{ 'is-invalid': submitted && myusername.invalid }"
+                            formControlName="username" name="username"
+                            class="form-controls pl-3 text-center" placeholder="Username">
+                          </div>
+                    </div>
+    
+                    <div class="row justify-content-center">
+                        <div class="input-group mb-5 col-md-12">
+                            <input type="text" 
+                            [ngClass]="{'is-invalid': submitted && mypassword.invalid}" name="password" formControlName="password"
+                            class="form-controls pl-3 text-center" placeholder="Password">
+                          </div>
+                     </div>
+    
+    
+                  <div class="row justify-content-center">
+                    <div class="input-group mb-3 col-md-3" >
+                      <button type="submit" class="form-control pl-3 text-white" id="submits"
+                      style="background: linear-gradient(to left,rgb(51, 1, 85), rgb(6, 80, 80));">login
+                      </button>
+                    </div>
+                  </div>
+    
+                  <div class="row justify-content-center">
+                    <h4 class="text-white">New Boss ? <input type="button" [routerLink]="['/mainadminsignup']" value="Create account" 
+                      style="background-color: transparent; border: none; color: rgb(255, 0, 0); font-size: 16px;"></h4>
+                  </div>
+        
+                </form>
+                </div>
+
+            </div>
+            </div>
+        </div>
+     </div>
+    </div>
+    
+    

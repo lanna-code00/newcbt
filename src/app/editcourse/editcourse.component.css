@@ -1,0 +1,23 @@
+#firstmodal{
+  position: fixed; 
+  z-index: 1000; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.card .card-body .row .input-group .form-control{
+  border-radius: 40px;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+}
+.card .card-body .row .input-group .form-control:focus{
+  border-radius: 40px;
+  background-color: transparent;
+  border-color: linear-gradient(to right,rgb(51, 1, 85), rgb(10, 212, 212));;
+}

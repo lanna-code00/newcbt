@@ -1,0 +1,43 @@
+<div class="container-fluid animated fadeInUp mt-5">
+  
+      <table class="table table-bordered table-hover" id="myTable">
+        <thead class="bg-dark text-white text-center">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">TUTOR</th>
+            <th scope="col">COURSES</th>
+            <th scope="col">Quest No</th>
+            <th scope="col">DATE</th>
+            <th scope="col">TIME</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>     
+           
+          <tbody *ngFor = "let coursey of coursess let i = index">
+          <tr class="text-center">
+            <td>{{i + 1}}</td>
+            <td>{{coursey.name | uppercase}}</td>
+            <td>{{coursey.course | uppercase}}</td> 
+            <td>{{coursey.questNo}}</td>
+            <td>{{coursey.date}}</td>
+            <td>{{coursey.time}}</td>
+            <td>
+                <button class="btn btn-danger mr-3" (click)="delCourse(coursey)"><span class="fa fa-trash"></span></button>
+                <button class="btn btn-primary" (click)="editbtn(coursey.id)"><span class="fa fa-edit"></span></button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button mat-raised-button (click)="openDialog()" color="primary"><span class="fa fa-plus-circle fa-2x"></span></button>
+    
+    <button mat-raised-button [routerLink]="['/adminsidebar/setquest']" class="float-right" color="warn"><span class="fa fa-arrow-alt-circle-right fa-2x"></span></button>
+    
+  </div>
+  <router-outlet></router-outlet>
+
+
+
+
+

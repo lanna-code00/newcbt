@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row mx-auto ml-5">
+<div class="animated fadeIn" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="column" id="main">
+          <h1>NEW STUDENT</h1>
+          <h3 class="text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          <form [formGroup]="angForm" novalidate (ngSubmit)="postdata()">
+
+            <div *ngIf="correct" class="card-header bg-success text-center text-white mt-2 mb-3 animated fadeInUp">
+              <p class="mb-1 mt-1">You're good to go</p>
+           </div>
+
+          <div class="row">
+            <div class="col-md-6">          
+              <div class="form-group mb-4">
+            <input type="name" name="firstname" formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && myfirstname.invalid }" class="form-control" placeholder="First Name">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group mb-4">
+              <input type="text" name="lastname" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': submitted && mylastname.invalid }" placeholder="Last-name">
+            </div>
+          </div>
+          </div>
+          
+            <div class="form-group mb-4">
+              <input type="text" name="surname" formControlName="surname" class="form-control" [ngClass]="{ 'is-invalid': submitted && mysurname.invalid }" placeholder="Surname">
+            </div>
+            
+          <div class="row">
+            <div class="col-md-6">          
+              <div class="form-group mb-4">
+            <input type="text" name="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && myemail.invalid }" placeholder="E-mail">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group mb-4">
+              <input type="text" name="username" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && myusername.invalid }" placeholder="Username">
+            </div>
+          </div>
+          </div>
+
+            <div class="form-group mb-4">
+              <input type="text" name="address" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && myaddress.invalid }" placeholder="Address">
+            </div>
+           
+          <div class="row">
+            <div class="col-md-6">          
+              <div class="form-group mb-4">
+                <mat-form-field appearance="fill">
+                  <mat-label class="text-black">Gender</mat-label>
+                  <mat-select  class="text-white" name="gender" [ngClass]="{ 'is-invalid': submitted && mygender.invalid }" formControlName="gender">
+                    <mat-option *ngFor="let gs of gender" [value]="gs.value">
+                     {{gs.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>             
+               </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group mb-4">
+              <input type="text" name="phone" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && myphone.invalid }" placeholder="Phone Number">
+            </div>
+          </div>
+          </div>
+
+          <div class="form-group mb-4">
+            <input type="text" name="parentsno" formControlName="parentsno" class="form-control" [ngClass]="{ 'is-invalid': submitted && myparentsno.invalid }" placeholder="Parent's / Guardian's phone number">
+            </div>
+
+          <div class="form-group mb-4">
+            <input type="password" name="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && mypassword.invalid }" placeholder="password">
+          </div>
+
+         
+
+            <button type="submit" class="btn btn-primary"
+            style="background: linear-gradient(360deg, rgba(9,9,121,1) 35%, rgb(56, 59, 230) 100%);">Sign Up</button>
+          </form>
+        </div>
+        <div>
+          
+            
+        </div>
+        <div class="column" id="secondary">
+          <div class="sec-content">
+            <h2 class="text-white">Welcome Back!</h2>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <button type="button" class="btn btn-primary" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

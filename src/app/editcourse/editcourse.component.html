@@ -1,0 +1,65 @@
+
+        <div id="firstmodal" class="animated fadeIn">
+       
+            <div class="container col-md-5">
+        <div class="card mt-5" style="border: none;">
+            
+                 <h1 class="text-center mb-2 mt-2" style="font-size: 20px;">EDIT COURSE</h1>
+              <div class="card-body mt-3">
+                <form [formGroup]="angForm2">
+                  <input type="text" hidden name="id" formControlName="id">
+                  <div class="row">
+                      <div class="input-group mb-5 col-md-6">
+                        <input type="text" class="form-control pl-3"
+                           formControlName="name" placeholder="tutor's name" name="name">
+                      </div>                     
+                    
+                        <div class="input-group mb-5 col-md-6">
+                          <input type="text" class="form-control pl-3"
+                          name="course" formControlName="course" placeholder="Maths">
+                          
+                        </div>
+                  </div>
+                
+  
+                  <div class="row">
+                      <div class="input-group mb-5 col-md-6">
+                        <mat-form-field>
+                            <input matInput name="date" formControlName="date" [matDatepicker]="picker1">
+                             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                             <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                        <div class="input-group mb-5 col-md-6">
+                            <input type="text"
+                            class="form-control pl-3" formControlName="questNo" name="questNo" placeholder="20">
+                        </div>
+                  </div>
+  
+                  <div class="row justify-content-center">
+                    <div class="input-group mb-5 col-md-6">
+                        <input type="text"
+                        class="form-control pl-3" formControlName="time" name="time" placeholder="07:00AM">
+                      </div>
+    
+                </div>
+  
+                <div class="row justify-content-right">
+                  <div class="input-group col-md-3">
+                    <button type="submit" (click)="update()" mat-button color="primary">update</button>
+                  </div>
+
+                  <div class="input-group col-md-3">
+                    <button mat-button color="warn" id="cancel">Cancel</button>
+                  </div>
+                </div>
+
+              </form> 
+              </div>
+          </div>
+          </div>
+        
+        </div>
+      
+    

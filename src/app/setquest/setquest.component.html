@@ -1,0 +1,158 @@
+ <div class="container-fluid animated fadeInUp">
+  <div class="h3 mb-2 mt-2 text-center">QUESTIONS</div>
+  <button (click)="displayquestiontable()" mat-raised-button color="primary" class="mt-3 mb-3">
+    <span class="fa fa-plus-circle fa-2x"></span>    
+  </button>
+<table class="table table-bordered table-hover" id="myTable">
+  <thead class="bg-dark text-white">
+    <tr>
+      <th>ACTIONS</th>
+      <th>QUESTION ID</th>
+       <th>PAPER TYPE</th>
+      <th>QUESTION</th>
+      <th>OPTION A</th>
+      <th>OPTION B</th>
+      <th>OPTION C</th>
+      <th>OPTION D</th>
+      <th>CORRECT ANS</th>
+      <th>MARK</th>
+    </tr>
+  </thead>
+  
+  <tbody class="animated fadeInUp">
+    <tr *ngFor="let quest of questArr let i = index">
+
+        <td class="h6 text-center"><button class="btn btn-danger m-2"><span class="fa fa-trash"></span></button>
+          <button type="button" class="btn btn-primary" (click)="editbtn(quest.quest_id)">
+              <span class="fa fa-edit"></span>
+          </button></td>
+        <td class="h6 text-center">{{i + 1}}</td>
+    <td class="h6 text-center">{{quest.course}}</td>
+
+        <td class="h6 text-center">{{quest.question}}</td>
+        <td class="h6 text-center">{{quest.optionA}}</td>
+        <td class="h6 text-center">{{quest.optionB}}</td>
+        <td class="h6 text-center">{{quest.optionC}}</td>
+        <td class="h6 text-center">{{quest.optionD}}</td>
+        <td class="h6 text-center">{{quest.correctans}}</td>
+        <td class="h6 text-center">{{quest.marks}}</td>
+
+    </tr>
+</tbody>
+</table>
+    
+
+</div>  
+
+<router-outlet></router-outlet>
+
+<!-- Modal -->
+ <form [formGroup]="myquest" (submit)="submitquest()">
+   <div class="container">
+  
+  <div  id="firstmodal" *ngIf="sumitted">
+    
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+    </p>
+
+    <div class="container col-md-4">
+      <div class="row mx-auto">
+    <div class="card col-md-12 mx-auto">
+    <div><h2 class="text-center">ADD QUESTIONS</h2></div>
+
+    <div class="row">
+        <div class="col-md-12 float-right">    
+    <mat-form-field>
+      <mat-label>Choose Paper type</mat-label>
+      <mat-select  formControlName="papertype" class="mb-2 col-md-12 float-right form-control" name="papertype">
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let qq of setquests" [value]="qq.course_id">
+          {{qq.course}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row">
+   <div class="col-md-6">
+      <mat-form-field class="example-full-width">
+        <mat-label>Question</mat-label>
+        <textarea matInput name="question" formControlName="question"></textarea>
+      </mat-form-field>
+   </div>
+
+   <div class="col-md-6">
+    <mat-form-field class="example-full-width">
+      <mat-label>optionA</mat-label>
+      <textarea matInput name="optionA" formControlName="optionA"></textarea>
+    </mat-form-field>
+   </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-6">
+       <mat-form-field class="example-full-width">
+         <mat-label>optionB</mat-label>
+         <textarea matInput name="optionB" formControlName="optionB"></textarea>
+       </mat-form-field>
+    </div>
+ 
+    <div class="col-md-6">
+     <mat-form-field class="example-full-width">
+       <mat-label>optionA</mat-label>
+       <textarea matInput name="optionC" formControlName="optionC"></textarea>
+     </mat-form-field>
+    </div>
+   </div>
+
+
+   <div class="row">
+    <div class="col-md-6">
+       <mat-form-field class="example-full-width">
+         <mat-label>optionD</mat-label>
+         <textarea matInput name="optionD" formControlName="optionD"></textarea>
+       </mat-form-field>
+    </div>
+ 
+    <div class="col-md-6">
+     <mat-form-field class="example-full-width">
+       <mat-label>Correct answer</mat-label>
+       <textarea matInput name="correctans" formControlName="correctans"></textarea>
+     </mat-form-field>
+    </div>
+   </div>
+
+   <div class="row float-right">
+    <div class="col-md-6">
+      <mat-form-field class="example-full-width">
+        <mat-label>Marks</mat-label>
+        <input pattern="[0-9]*" matInput name="marks" formControlName="marks">
+      </mat-form-field>
+   </div>
+   </div>
+
+         <div class="mb-3">
+          <button mat-raised-button class="float-right" color="warn" (click)="hidequestiontable()"><span class="fa fa-times fa-2x"></span></button>
+          <button type="submit" mat-raised-button class="float-left" color="primary" (click)="hidequestiontable()"><span class="fa fa-plus fa-2x"></span></button>
+         </div>
+         
+
+          </div> 
+    
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+      </form> 
+ 

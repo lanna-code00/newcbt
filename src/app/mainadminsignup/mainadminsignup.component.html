@@ -1,0 +1,117 @@
+<div class="newhead">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form [formGroup]="mainadmin" novalidate (ngSubmit)="postdata()" enctype="multipart/form-data">
+        <div class="card mt-5 shadow-lg" style="background: transparent; border: none;">
+          <input type="text" hidden name="id" formControlName="id">
+            <!-- <div class="card-header text-center"> -->
+               <h1 class="text-white text-center mb-2" style="font-size: 30px;">REGISTER/SIGN-UP FORM</h1>
+            <!-- </div> -->
+            <div class="card-body mt-3">
+                
+                <div class="row">
+                  <!-- <div class="form-group col-6"> -->
+                    <div class="input-group mb-5 col-md-6">
+                      <input type="text" class="form-control pl-3" [ngClass]="{ 'is-invalid': submitted && myfirstname.invalid }"
+                         formControlName="firstname" placeholder="Firstname" name="firstname">
+                       <!-- <span *ngIf="myfirstname.touched && myemail.invalid" class="text-danger">Enter firstname</span> -->
+                      </div>
+                    <!-- </div> -->
+                   
+                   
+                      
+                      <div class="input-group mb-5 col-md-6">
+                        <input type="text" class="form-control pl-3" [ngClass]="{ 'is-invalid': submitted && mysurname.invalid }"
+                         formControlName="surname" placeholder="Surname" name="surname">
+                        
+                      </div>
+                </div>
+              
+
+                <div class="row">
+                    <div class="input-group mb-5 col-md-6">
+                        <input type="text" class="form-control pl-3" [ngClass]="{ 'is-invalid': submitted &&  myemail.invalid}" 
+                         formControlName="email" placeholder="E-mail" name="email">
+                         
+                      </div>
+    
+                      <div class="input-group mb-5 col-md-6">
+                        <input type="text" [ngClass]="{ 'is-invalid': submitted && myusername.invalid }"
+                         class="form-control pl-3" formControlName="username" placeholder="Username" name="username">
+                        
+                      </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-group mb-5 col-md-6">
+                      <input type="text" [ngClass]="{ 'is-invalid': submitted && myaddress.invalid}" 
+                      class="form-control pl-3" formControlName="address" placeholder="Address" name="address">
+                      
+                    </div>
+  
+                    <div class="input-group mb-5 col-md-6">
+                      <input type="text" class="form-control pl-3"  [ngClass]="{'is-invalid': submitted && myphone.invalid}"
+                       formControlName="phone" placeholder="Phone" name="phone">
+                     
+                    </div>
+              </div>
+
+              <div class="row">
+                <div class="input-group mb-5 col-md-6">
+                    <input type="text" class="form-control pl-3" [ngClass]="{ 'is-invalid': submitted && mypassword.invalid }" 
+                     formControlName="password" placeholder="Password" name="password">
+                   
+                  </div>
+
+
+                  <div class="input-group mb-5 col-md-6">
+                    <input type="text" class="form-control pl-3" [ngClass]="{ 'is-invalid': submitted && myconfirmpassword.invalid }"
+                    formControlName="confirmpassword" placeholder="confirm-password">
+                  
+                  </div>
+
+
+                  
+              </div>
+
+              
+              <mat-form-field appearance="fill">
+                <mat-label class="text-white">Gender</mat-label>
+                <mat-select  class="text-white" name="gender" [ngClass]="{ 'is-invalid': submitted && mygender.invalid }" formControlName="gender">
+                  <mat-option *ngFor="let gs of gender" [value]="gs.value">
+                   {{gs.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <div class="row">
+                  <div class="input-group mb-3 col-md-12">
+                    <input type="file" id="imageUpload" (change)="setPhoto($event)" 
+                    formControlName="picture"
+                    class="form-control pl-3" name="picture" placeholder="picture" 
+                    style="outline: linear-gradient(to left,rgb(51, 1, 85), rgb(6, 80, 80));">
+                  </div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="input-group mb-3 col-md-3">
+                  <button type="submit" class="btn btn-danger btn-lg" id="submits"
+                  style="background: linear-gradient(to left,rgb(51, 1, 85), rgb(6, 80, 80));">
+                  <span class="fa fa-spinner fa-spin" *ngIf="submitted"></span>SUBMIT</button>
+                </div>
+              </div>
+
+              <div class="row justify-content-center">
+                <h4 class="text-white">Already have an account ? <input type="button" value="login" [routerLink]="['/mainadminlogin']"
+                  style="background-color: transparent; border: none; color: rgb(255, 0, 0); font-size: 16px;"></h4>
+              </div>
+
+            </div>
+        </div>
+      </form>
+        </div>
+    </div>
+ </div>
+</div>
+

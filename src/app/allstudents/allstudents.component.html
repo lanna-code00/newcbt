@@ -1,0 +1,49 @@
+<div class="container-fluid animated fadeInUp">
+  <div class="h3 mb-2 mt-3 text-center">LIST OF ALL STUDENTS</div>
+      <table class="table table-bordered table-hover" id="myTable">
+        
+          <thead class="bg-dark text-white">
+            <tr>
+               <th scope="col">S/N</th>
+               <th scope="col">FIRST-NAME</th>
+               <th scope="col">LAST-NAME</th>
+               <th scope="col">SURNAME</th>
+               <th scope="col">E-MAIL</th>
+               <th scope="col">USERNAME</th>
+               <th scope="col">ADDRESS</th>
+               <th scope="col">PARENT'S/GUARDIAN NO</th>
+               <th scope="col">PHONE NO</th>
+               <th scope="col">GENDER</th>
+               <th scope="col">EDIT / VIEW PROFILE</th>
+               <th scope="col">DELETE</th>
+
+             </tr>
+          </thead>
+          <tbody class="animated fadeInUp" *ngFor="let student of students">
+            <tr>
+              <th scope="row">{{student.id}}</th>
+              <td>{{student.firstname}}</td>
+              <td>{{student.lastname}}</td>
+              <td>{{student.surname}}</td>
+              <td>{{student.email}}</td>
+              <td>{{student.username}}</td>
+              <td>{{student.address}}</td>
+              <td class="text-center">{{student.parentsno}}</td>
+              <td>{{student.phone}}</td>
+              <td>{{student.gender}}</td>
+              <td>
+                <button class="btn btn-info" (click)="openDialog(student.id)">Details</button>
+              </td> 
+              <td>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+         </table>
+         <!-- <app-editform></app-editform> -->
+         <!-- <router-outlet></router-outlet> -->
+        </div>
+
+
+
+           

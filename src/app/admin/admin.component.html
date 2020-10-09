@@ -1,0 +1,90 @@
+<!-- 
+        <div class="modal-dialog shadow" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h2 class="modal-title w-100 font-weight-bold">Admin Sign up</h2>
+         
+            </div>
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <i class="fas fa-user prefix grey-text"></i>
+                <input type="text" name="name" formControlName="name" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+              </div>
+              <div class="md-form mb-5">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input type="email" name="email" formControlName="email" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+              </div>
+
+              <div class="md-form mb-5">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input type="text" name="identification" formControlName="identification" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-email">Identification</label>
+              </div>
+      
+              <div class="md-form mb-4"
+              >
+                <i class="fas fa-lock prefix grey-text"></i>
+                <input type="password" name="password" formControlName="password" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+              </div>
+      
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button class="btn btn-success shadow" type="submit">Sign up</button><br>
+              <button class="btn btn-success shadow" routerLink="/adminlogin">Already have an account?</button>
+            </div>
+          </form>
+          </div>
+        </div>
+     
+      
+       -->
+
+
+
+       <section>				
+        <div id="container_demo" >
+            <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+                <div id="login" class="animate form">
+                    <form [formGroup]="angForm" (ngSubmit)="postdata()"> 
+                        <h1>Sign Up</h1> 
+                        <p> 
+                            <label for="username" class="uname">Name</label>
+                            <input id="username" [ngClass]="{ 'is-invalid': submitted && name.invalid }" name="name" formControlName="name" type="text" placeholder="peter"/>
+                        </p>
+
+                        <p> 
+                          <label for="username" class="uname">E-mail</label>
+                          <input id="username"  [ngClass]="{ 'is-invalid': submitted && email.invalid }" name="email" formControlName="email" type="text" placeholder="mymail@mail.com"/>
+                      </p>
+
+                        <p> 
+                          <label for="password" class="youpasswd"> Your identification </label>
+                          <input id="password"  [ngClass]="{ 'is-invalid': submitted && identification.invalid }" name="identification" formControlName="identification" type="text" placeholder="eg. SCICT 1" /> 
+                      </p>
+                        <p> 
+                            <label for="password" class="youpasswd"> Your password </label>
+                            <input id="password" name="password" [ngClass]="{ 'is-invalid': submitted && password.invalid }" formControlName="password" type="password" placeholder="eg. X8df!90EO" /> 
+                        </p>
+                        <p class="keeplogin"> 
+          <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+          <label for="loginkeeping">Keep me logged in</label>
+        </p>
+                        <p class="login button"> 
+                            <input type="submit" value="Sign Up" /> 
+        </p>
+                        <p class="change_link">
+         Have an account already ?
+          <a [routerLink]="['/adminlogin']" routerLinkActive="router-link-active"  class="to_register">Login</a>
+        </p>
+                    </form>
+                </div>
+</div>
+    </div>
+  </section>
